@@ -4,8 +4,8 @@
 #    f_temp = raw_input('Please enter a temp in Fahrenheit. q or Q to quit: ')
 #    if f_temp == 'q' or f_temp == 'Q':
 #        break
-fin = open('/Users/mrash/Desktop/PythonforDevelopers/LabsData/tmpprecip2012.dat', 'r')
-fout = open('/Users/mrash/Desktop/PythonforDevelopers/LabsData/tmpprecip2012-had.dat', 'w')
+fin = open('../Resources/LabsData/tmpprecip2012.dat', 'r')
+fout = open('../Resources/LabsData/tmpprecip2012-had.dat', 'w')
 i = 0
 total_rainfall = 0
 for linein in fin:
@@ -15,7 +15,7 @@ for linein in fin:
     try:
         value = float(rainfall)
     except (ValueError, NameError):
-        print 'That was not a valid number. Please try again...'
+        print('That was not a valid number. Please try again...')
         continue
     if value > 0:
         i += 1
@@ -23,7 +23,7 @@ for linein in fin:
         fout.write('{0} did have ran fall \n'.format(value))
     else:
         fout.write('{0}\n'.format(value))
-print 'There were {0} days that had rainfall with a total of {1}'.format(i,total_rainfall)
+print('There were {0} days that had rainfall with a total of {1}'.format(i,total_rainfall))
 fin.close()
 fout.close()
 
